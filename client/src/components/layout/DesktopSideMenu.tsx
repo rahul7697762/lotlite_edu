@@ -32,13 +32,13 @@ export default function DesktopSideMenu() {
         {isExpanded && (
           <motion.div
             initial={{ width: 0, opacity: 0 }}
-            animate={{ width: 192, opacity: 1 }}
+            animate={{ width: 144, opacity: 1 }}
             exit={{ width: 0, opacity: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className="flex items-center h-12 bg-white dark:bg-zinc-900"
             style={{ overflow: 'hidden' }}
           >
-            <div className="flex items-center h-full w-[192px]">
+            <div className="flex items-center h-full w-[144px]">
               {/* Phone */}
               <button onClick={() => setAdvisorPopupOpen(true)} title="Talk to an Advisor" className="w-12 h-12 bg-white dark:bg-zinc-900 flex items-center justify-center border-l border-border dark:border-white/10 hover:bg-gray-100 dark:hover:bg-zinc-800 hover:text-wine dark:hover:text-rose-400 transition-colors cursor-pointer text-black dark:text-zinc-300 shrink-0">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="hover:scale-110 transition-transform">
@@ -51,10 +51,6 @@ export default function DesktopSideMenu() {
                   <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
                   <path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1" />
                 </svg>
-              </a>
-              {/* Video Camera */}
-              <a href="#" title="Video Tour" className="w-12 h-12 bg-white dark:bg-zinc-900 flex items-center justify-center border-l border-border dark:border-white/10 hover:bg-gray-100 dark:hover:bg-zinc-800 hover:text-wine dark:hover:text-rose-400 transition-colors cursor-pointer text-black dark:text-zinc-300 shrink-0">
-                <Video size={22} className="hover:scale-110 transition-transform" />
               </a>
               {/* Map Pin */}
               <a href="https://maps.app.goo.gl/HfDLvejmHQTizR1v7" target="_blank" rel="noopener noreferrer" title="Location" className="w-12 h-12 bg-white dark:bg-zinc-900 flex items-center justify-center border-l border-border dark:border-white/10 hover:bg-gray-100 dark:hover:bg-zinc-800 hover:text-wine dark:hover:text-rose-400 transition-colors cursor-pointer text-black dark:text-zinc-300 shrink-0">

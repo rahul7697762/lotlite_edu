@@ -216,10 +216,11 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
 
   const fetchWebsiteData = async () => {
     try {
-      const [certRes, instRes, mentorRes] = await Promise.all([
+      const [certRes, instRes, mentorRes, papersRes] = await Promise.all([
         fetch(`${API_BASE}/api/website-data/certificates`),
         fetch(`${API_BASE}/api/website-data/instructors`),
-        fetch(`${API_BASE}/api/website-data/industryMentors`)
+        fetch(`${API_BASE}/api/website-data/industryMentors`),
+        fetch(`${API_BASE}/api/website-data/papers`)
       ]);
 
       let mergedData = {};
@@ -237,6 +238,11 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       if (mentorRes.ok) {
         const json = await mentorRes.json();
         if (json.data) mergedData = { ...mergedData, industryMentors: json.data };
+      }
+
+      if (papersRes.ok) {
+        const json = await papersRes.json();
+        if (json.data) mergedData = { ...mergedData, papers: json.data };
       }
 
       setWebsiteData(mergedData);

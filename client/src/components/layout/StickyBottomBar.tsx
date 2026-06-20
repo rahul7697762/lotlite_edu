@@ -40,7 +40,7 @@ export default function StickyBottomBar({ isMenuOpen }: StickyBottomBarProps) {
               onClick={() => {
                 window.dispatchEvent(new CustomEvent('switch-tab', { detail: 'apply_form' }));
               }}
-              className="bg-white text-wine px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-bold text-[11px] sm:text-[13px] uppercase tracking-widest hover:bg-gray-100 active:scale-95 transition-all shadow-md shrink-0"
+              className="bg-white text-wine flex-1 mr-4 sm:mr-6 py-3.5 sm:py-4 rounded-full font-bold text-[11px] sm:text-[13px] uppercase tracking-widest hover:bg-gray-100 active:scale-95 transition-all shadow-md"
             >
               Apply Now
             </button>
@@ -58,10 +58,7 @@ export default function StickyBottomBar({ isMenuOpen }: StickyBottomBarProps) {
                   <path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1" />
                 </svg>
               </a>
-              {/* Video Camera */}
-              <a href="#" className="w-9 h-9 sm:w-11 sm:h-11 flex items-center justify-center cursor-pointer text-white hover:text-white/80 transition-colors">
-                <Video size={22} />
-              </a>
+
               {/* Map Pin */}
               <a href="https://maps.app.goo.gl/HfDLvejmHQTizR1v7" target="_blank" rel="noopener noreferrer" className="w-9 h-9 sm:w-11 sm:h-11 flex items-center justify-center cursor-pointer text-white hover:text-white/80 transition-colors">
                 <MapPin size={22} />

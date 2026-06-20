@@ -1,15 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
 
 @theme {
   --color-wine: #C21A22;
   --color-wine-hover: #9E1218;
+  --color-wine-light: rgba(194, 26, 34, 0.05);
+  --color-wine-light-border: rgba(194, 26, 34, 0.15);
   --color-card: #FFFFFF;
-  --color-border: #E5E7EB;
+  --color-input: #F9FAFB;
+  --color-bottle-green: #C21A22;
+  --color-black: #2e2e2e;
+  --color-white: #FFFFFF;
+  --color-offwhite: #F9FAFB;
   --color-muted: #6B7280;
+  --color-border: rgba(0, 0, 0, 0.08);
+  --color-badge-bg: #FFFFFF;
+  --color-badge-text: #C21A22;
+  --color-badge-border: rgba(194, 26, 34, 0.2);
+
+  --font-serif: "Montserrat", sans-serif;
+  --font-sans: "Montserrat", sans-serif;
+
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 24px;
+
+  --shadow-card: 0 12px 60px rgba(0, 0, 0, 0.08);
 }
 
 @layer base {
-  body {
-    @apply bg-gray-50 text-gray-900 font-sans antialiased;
+  html {
+    scroll-behavior: smooth;
+    font-family: "Montserrat", sans-serif;
   }
+
+  body {
+    font-family: "Montserrat", sans-serif;
+    @apply font-sans text-black bg-white transition-colors duration-300 antialiased;
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+
+  body::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari and Opera */
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Montserrat", sans-serif;
+    @apply tracking-tight text-black font-semibold;
+  }
+
+  p,
+  span,
+  div,
+  li,
+  ul,
+  ol,
+  button,
+  input,
+  textarea,
+  select {
+    font-family: "Montserrat", sans-serif;
+  }
+}
+
+.wine-glow {
+  @apply absolute rounded-full blur-[120px] opacity-10 pointer-events-none;
+  background: radial-gradient(circle, var(--color-wine) 0%, transparent 70%);
+}
+
+.green-glow {
+  @apply absolute rounded-full blur-[120px] opacity-10 pointer-events-none;
+  background: radial-gradient(circle, var(--color-bottle-green) 0%, transparent 70%);
+}
+
+.glass-card {
+  @apply bg-white/60 backdrop-blur-md border border-border rounded-2xl shadow-card transition-all duration-300 hover:bg-white/80;
+}
+
+.light-gradient-card {
+  @apply bg-linear-to-br from-white to-offwhite border border-border rounded-2xl shadow-card;
+}
+
+/* Slide in drawer keyframes */
+@keyframes slide-in {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-in {
+  animation: slide-in 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }

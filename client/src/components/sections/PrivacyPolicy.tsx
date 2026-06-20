@@ -18,7 +18,7 @@ export default function PrivacyPolicy() {
 
         <h2>2. How We Use Your Information</h2>
         <p>
-          We use the information we collect to provide, maintain, and improve our services, communicate with you, process your admissions applications, and send you important notices and updates related to Lotlite Education.
+          We use the information we collect to provide, maintain, and improve our services, communicate with you, process your admissions applications, and send you important notices and updates related to Lotlite Startup.
         </p>
 
         <h2>3. Information Sharing</h2>

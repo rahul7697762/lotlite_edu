@@ -47,7 +47,17 @@ const LeadSchema = new mongoose.Schema({
   },
   errorDetail: {
     type: String
+  },
+
+  // ── Dograh AI Call fields ───────────────────────────────────────────────────
+  dograhCallOutcome: {
+    type: String,
+    trim: true
+  },
+  dograhLastCallAt: {
+    type: Date
   }
+  // ────────────────────────────────────────────────────────────────────────────
 }, {
   timestamps: true
 });

@@ -157,48 +157,56 @@ const BlogGeneration = () => {
   };
 
   return (
-    <div className="p-6 md:p-8 max-w-6xl mx-auto w-full">
+    <div className="p-6 md:p-8 max-w-6xl mx-auto w-full bg-transparent relative z-10">
       {/* Page Header with Tabs */}
       <div className="mb-8">
         <div className="flex items-center justify-between mb-4">
-          <h1 className="text-3xl font-bold text-gray-900 flex items-center gap-3">
-            <FileText className="text-wine" /> Blog Studio
-          </h1>
+          <div>
+            <div className="flex items-center gap-2 text-wine font-black text-[9px] uppercase tracking-widest">
+              <FileText size={12} />
+              <span>Marketing Content Engine</span>
+            </div>
+            <h1 className="text-3xl font-serif font-black tracking-tight text-black mt-2">
+              Blog Studio
+            </h1>
+            <p className="text-xs text-zinc-500 mt-1 uppercase font-mono tracking-widest font-semibold">
+              Generate, edit, and publish blogs using AI coordinates.
+            </p>
+          </div>
         </div>
         {/* Tab Switcher */}
-        <div className="flex items-center gap-1 border-b border-gray-200">
+        <div className="flex items-center gap-1 border-b border-border/60 mb-6">
           <button
             onClick={() => setActiveTab('blog')}
-            className={`flex items-center gap-2 px-5 py-2.5 text-sm font-semibold border-b-2 -mb-px transition-colors cursor-pointer ${
+            className={`flex items-center gap-2 px-5 py-3 text-xs font-black uppercase tracking-wider border-b-2 -mb-px transition-colors cursor-pointer ${
               activeTab === 'blog'
                 ? 'border-wine text-wine'
-                : 'border-transparent text-gray-500 hover:text-gray-800'
+                : 'border-transparent text-zinc-400 hover:text-black'
             }`}
           >
-            <FileText size={16} /> Blog Generation
+            <FileText size={14} /> Blog Generation
           </button>
           <button
             onClick={() => setActiveTab('author')}
-            className={`flex items-center gap-2 px-5 py-2.5 text-sm font-semibold border-b-2 -mb-px transition-colors cursor-pointer ${
+            className={`flex items-center gap-2 px-5 py-3 text-xs font-black uppercase tracking-wider border-b-2 -mb-px transition-colors cursor-pointer ${
               activeTab === 'author'
                 ? 'border-wine text-wine'
-                : 'border-transparent text-gray-500 hover:text-gray-800'
+                : 'border-transparent text-zinc-400 hover:text-black'
             }`}
           >
-            <UserCircle size={16} /> Author Profile
+            <UserCircle size={14} /> Author Profile
           </button>
           <button
             onClick={() => setActiveTab('published')}
-            className={`flex items-center gap-2 px-5 py-2.5 text-sm font-semibold border-b-2 -mb-px transition-colors cursor-pointer ${
+            className={`flex items-center gap-2 px-5 py-3 text-xs font-black uppercase tracking-wider border-b-2 -mb-px transition-colors cursor-pointer ${
               activeTab === 'published'
                 ? 'border-wine text-wine'
-                : 'border-transparent text-gray-500 hover:text-gray-800'
+                : 'border-transparent text-zinc-400 hover:text-black'
             }`}
           >
-            <Trash2 size={16} style={{display:'none'}} />
-            <FileText size={16} /> Published Blogs
+            <FileText size={14} /> Published Blogs
             {publishedBlogs.length > 0 && (
-              <span className="ml-1 bg-wine text-white text-[10px] font-bold rounded-full px-1.5 py-0.5 leading-none">{publishedBlogs.length}</span>
+              <span className="ml-1.5 bg-wine text-white text-[9px] font-black rounded-full px-1.5 py-0.5 leading-none">{publishedBlogs.length}</span>
             )}
           </button>
         </div>
@@ -212,36 +220,36 @@ const BlogGeneration = () => {
 
         {/* Edit Mode: full-width editor, no config sidebar */}
         {editMode && generatedBlog ? (
-          <div className="max-w-4xl">
+          <div className="max-w-4xl mx-auto">
             <div className="flex items-center gap-3 mb-6">
               <button
                 onClick={() => { setGeneratedBlog(null); setEditMode(false); setIsEditing(false); }}
-                className="text-sm text-gray-500 hover:text-gray-800 font-medium cursor-pointer flex items-center gap-1 border border-gray-200 rounded-lg px-3 py-1.5 hover:bg-gray-50"
+                className="text-xs uppercase tracking-wider text-zinc-400 hover:text-black font-black flex items-center gap-1 border border-border rounded-xl px-3.5 py-2 hover:bg-white bg-zinc-50 transition-all cursor-pointer"
               >
                 ← Back
               </button>
-              <span className="text-xs text-gray-400 font-mono uppercase tracking-widest">Editing: {generatedBlog.seoTitle || generatedBlog.topic}</span>
+              <span className="text-[10px] text-zinc-400 font-mono uppercase tracking-widest font-semibold">Editing: {generatedBlog.seoTitle || generatedBlog.topic}</span>
             </div>
-            <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-              <div className="flex justify-between items-center mb-6 border-b pb-4">
-                <h2 className="text-xl font-bold text-gray-900">{generatedBlog.seoTitle || generatedBlog.topic}</h2>
-                <div className="flex gap-3">
+            <div className="bg-white/70 backdrop-blur-md rounded-2xl border border-border shadow-card p-6">
+              <div className="flex justify-between items-center mb-6 border-b border-border/50 pb-4">
+                <h2 className="text-lg font-bold text-gray-900 leading-tight">{generatedBlog.seoTitle || generatedBlog.topic}</h2>
+                <div className="flex gap-2">
                   <button
                     onClick={() => setIsEditing(!isEditing)}
-                    className={`flex items-center gap-2 px-4 py-2 text-sm rounded-lg font-medium transition-colors cursor-pointer ${
-                      isEditing ? 'bg-amber-100 text-amber-800 hover:bg-amber-200' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                    className={`flex items-center gap-1.5 px-4 py-2 text-[10px] font-black uppercase tracking-wider rounded-xl transition-colors cursor-pointer ${
+                      isEditing ? 'bg-amber-100 text-amber-800 hover:bg-amber-200' : 'bg-zinc-100 text-zinc-700 hover:bg-zinc-200'
                     }`}
                   >
-                    <Edit3 size={16} /> {isEditing ? 'Preview' : 'Edit'}
+                    <Edit3 size={12} /> {isEditing ? 'Preview' : 'Edit'}
                   </button>
                   <button
                     onClick={handleSave}
                     disabled={isSaving || saveSuccess}
-                    className={`flex items-center gap-2 px-4 py-2 text-sm rounded-lg font-medium text-white transition-colors cursor-pointer ${
-                      saveSuccess ? 'bg-green-600' : 'bg-wine hover:bg-wine/90'
+                    className={`flex items-center gap-1.5 px-4 py-2 text-[10px] font-black uppercase tracking-wider rounded-xl text-white transition-colors cursor-pointer ${
+                      saveSuccess ? 'bg-emerald-600' : 'bg-wine hover:bg-black'
                     } disabled:opacity-50`}
                   >
-                    {isSaving ? <><Loader2 size={16} className="animate-spin" /> Saving...</> : saveSuccess ? <><Check size={16} /> Saved!</> : <><Save size={16} /> Save & Publish</>}
+                    {isSaving ? <><Loader2 size={12} className="animate-spin" /> Saving...</> : saveSuccess ? <><Check size={12} /> Saved!</> : <><Save size={12} /> Save & Publish</>}
                   </button>
                 </div>
               </div>
@@ -249,22 +257,22 @@ const BlogGeneration = () => {
                 {isEditing ? (
                   <div className="space-y-4">
                     <div>
-                      <label className="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">Cover Image URL (Base64 or Link)</label>
+                      <label className="block text-[9px] font-black text-zinc-400 uppercase tracking-widest mb-1.5">Cover Image URL (Base64 or Link)</label>
                       <div className="flex gap-2">
                         <input
                           type="text"
                           value={generatedBlog.imageUrl || ''}
                           onChange={(e) => setGeneratedBlog((prev: any) => ({...prev, imageUrl: e.target.value}))}
-                          className="flex-1 px-3 py-2 border border-gray-300 rounded-lg text-sm bg-gray-50 font-mono"
+                          className="flex-1 px-4 py-2.5 border border-border rounded-xl text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-wine/10 focus:border-wine bg-zinc-50/50 font-mono"
                           placeholder="Paste image URL or Base64 string here..."
                         />
                         <div className="relative overflow-hidden shrink-0">
                           <button
                             type="button"
-                            className="h-full px-4 bg-gray-100 hover:bg-gray-200 border border-gray-300 rounded-lg text-sm font-medium whitespace-nowrap cursor-pointer flex items-center gap-2"
+                            className="h-full px-4 bg-zinc-100 hover:bg-zinc-200 border border-border rounded-xl text-xs font-bold whitespace-nowrap cursor-pointer flex items-center gap-2"
                             disabled={isUploadingImage}
                           >
-                            {isUploadingImage ? <Loader2 size={16} className="animate-spin" /> : <Upload size={16} />}
+                            {isUploadingImage ? <Loader2 size={12} className="animate-spin" /> : <Upload size={12} />}
                             Upload
                           </button>
                           <input 
@@ -278,22 +286,22 @@ const BlogGeneration = () => {
                       </div>
                     </div>
                     <div>
-                      <label className="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">Article HTML / Markdown Content</label>
+                      <label className="block text-[9px] font-black text-zinc-400 uppercase tracking-widest mb-1.5">Article HTML / Markdown Content</label>
                       <textarea
                         value={generatedBlog.markdown || generatedBlog.article || ''}
                         onChange={(e) => setGeneratedBlog({...generatedBlog, article: e.target.value, markdown: e.target.value})}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm bg-gray-50 font-mono min-h-[600px]"
+                        className="w-full px-4 py-3.5 border border-border rounded-xl text-xs font-medium focus:outline-none focus:ring-2 focus:ring-wine/10 focus:border-wine bg-zinc-50/50 font-mono min-h-[500px]"
                       />
                     </div>
                   </div>
                 ) : (
                   <>
                     {generatedBlog.imageUrl && (
-                      <div className="mb-6 rounded-xl overflow-hidden border border-gray-200">
+                      <div className="mb-6 rounded-2xl overflow-hidden border border-border/80">
                         <img src={generatedBlog.imageUrl} alt="Cover" className="w-full h-auto max-h-[300px] object-cover" />
                       </div>
                     )}
-                    <div dangerouslySetInnerHTML={{ __html: (generatedBlog.article || '').replace(/\n/g, '<br/>') }} />
+                    <div className="text-zinc-800 text-sm leading-relaxed" dangerouslySetInnerHTML={{ __html: (generatedBlog.article || '').replace(/\n/g, '<br/>') }} />
                   </>
                 )}
               </div>
@@ -302,73 +310,73 @@ const BlogGeneration = () => {
         ) : (
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-1 space-y-6">
-          <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-            <h2 className="text-lg font-semibold text-gray-900 mb-4 border-b pb-2">Configuration</h2>
+          <div className="bg-white/70 backdrop-blur-md rounded-2xl border border-border shadow-card p-6">
+            <h2 className="text-xs font-black text-black uppercase tracking-widest mb-4 border-b border-border/60 pb-2">Configuration</h2>
             <form onSubmit={handleGenerate} className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Topic</label>
+                <label className="block text-[9px] font-black text-zinc-400 uppercase tracking-widest mb-1.5">Topic</label>
                 <input
                   type="text"
                   name="topic"
                   value={formData.topic}
                   onChange={handleChange}
                   placeholder="Why Pune is the Best City..."
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm"
+                  className="w-full px-4 py-2.5 border border-border rounded-xl text-xs font-medium focus:outline-none focus:ring-2 focus:ring-wine/10 focus:border-wine bg-zinc-50/50"
                   required
                 />
               </div>
               
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Audience</label>
+                <label className="block text-[9px] font-black text-zinc-400 uppercase tracking-widest mb-1.5">Audience</label>
                 <input
                   type="text"
                   name="audience"
                   value={formData.audience}
                   onChange={handleChange}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm"
+                  className="w-full px-4 py-2.5 border border-border rounded-xl text-xs font-medium focus:outline-none focus:ring-2 focus:ring-wine/10 focus:border-wine bg-zinc-50/50"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Industry</label>
+                <label className="block text-[9px] font-black text-zinc-400 uppercase tracking-widest mb-1.5">Industry</label>
                 <input
                   type="text"
                   name="industry"
                   value={formData.industry}
                   onChange={handleChange}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm"
+                  className="w-full px-4 py-2.5 border border-border rounded-xl text-xs font-medium focus:outline-none focus:ring-2 focus:ring-wine/10 focus:border-wine bg-zinc-50/50"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Keywords</label>
+                <label className="block text-[9px] font-black text-zinc-400 uppercase tracking-widest mb-1.5">Keywords</label>
                 <input
                   type="text"
                   name="keywords"
                   value={formData.keywords}
                   onChange={handleChange}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm"
+                  className="w-full px-4 py-2.5 border border-border rounded-xl text-xs font-medium focus:outline-none focus:ring-2 focus:ring-wine/10 focus:border-wine bg-zinc-50/50"
                 />
               </div>
 
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Language</label>
+                  <label className="block text-[9px] font-black text-zinc-400 uppercase tracking-widest mb-1.5">Language</label>
                   <input
                     type="text"
                     name="language"
                     value={formData.language}
                     onChange={handleChange}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm"
+                    className="w-full px-4 py-2.5 border border-border rounded-xl text-xs font-medium focus:outline-none focus:ring-2 focus:ring-wine/10 focus:border-wine bg-zinc-50/50"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Length</label>
+                  <label className="block text-[9px] font-black text-zinc-400 uppercase tracking-widest mb-1.5">Length</label>
                   <select
                     name="length"
                     value={formData.length}
                     onChange={handleChange}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm bg-white"
+                    className="w-full px-4 py-2.5 border border-border rounded-xl text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-wine/10 focus:border-wine bg-white cursor-pointer"
                   >
                     <option value="Short (300-500 words)">Short</option>
                     <option value="Medium (500-1000 words)">Medium</option>
@@ -378,25 +386,25 @@ const BlogGeneration = () => {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Style</label>
+                <label className="block text-[9px] font-black text-zinc-400 uppercase tracking-widest mb-1.5">Style</label>
                 <input
                   type="text"
                   name="style"
                   value={formData.style}
                   onChange={handleChange}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm"
+                  className="w-full px-4 py-2.5 border border-border rounded-xl text-xs font-medium focus:outline-none focus:ring-2 focus:ring-wine/10 focus:border-wine bg-zinc-50/50"
                 />
               </div>
 
               <button
                 type="submit"
                 disabled={isGenerating || !formData.topic.trim()}
-                className="w-full flex items-center justify-center gap-2 bg-wine text-white px-4 py-2.5 rounded-lg hover:bg-wine/90 transition-colors disabled:opacity-50 mt-4"
+                className="w-full flex items-center justify-center gap-2 bg-wine hover:bg-black text-white px-4 py-3 rounded-xl text-xs font-black uppercase tracking-widest transition-all cursor-pointer shadow-md hover:shadow-lg active:scale-95 disabled:opacity-50 mt-4"
               >
                 {isGenerating ? (
-                  <><Loader2 className="animate-spin" size={18} /> Generating...</>
+                  <><Loader2 className="animate-spin" size={14} /> Generating...</>
                 ) : (
-                  <><Send size={18} /> Generate Article</>
+                  <><Send size={14} /> Generate Article</>
                 )}
               </button>
             </form>
@@ -405,37 +413,37 @@ const BlogGeneration = () => {
 
         <div className="lg:col-span-2">
           {generatedBlog ? (
-            <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-              <div className="flex justify-between items-center mb-6 border-b pb-4">
-                <h2 className="text-xl font-bold text-gray-900">{generatedBlog.seoTitle || formData.topic}</h2>
-                <div className="flex gap-3">
+            <div className="bg-white/70 backdrop-blur-md rounded-2xl border border-border shadow-card p-6">
+              <div className="flex justify-between items-center mb-6 border-b border-border/50 pb-4">
+                <h2 className="text-base font-bold text-gray-900 leading-tight">{generatedBlog.seoTitle || formData.topic}</h2>
+                <div className="flex gap-2">
                   <button 
                     onClick={() => setGeneratedBlog(null)}
-                    className="px-4 py-2 text-sm text-gray-600 bg-gray-100 hover:bg-gray-200 rounded-lg font-medium transition-colors cursor-pointer"
+                    className="px-4 py-2.5 text-[10px] font-black uppercase tracking-widest text-zinc-600 bg-zinc-100 hover:bg-zinc-200 rounded-xl transition-all cursor-pointer"
                   >
                     Discard
                   </button>
                   <button 
                     onClick={() => setIsEditing(!isEditing)}
-                    className={`flex items-center gap-2 px-4 py-2 text-sm rounded-lg font-medium transition-colors cursor-pointer ${
-                      isEditing ? 'bg-amber-100 text-amber-800 hover:bg-amber-200' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                    className={`flex items-center gap-1.5 px-4 py-2.5 text-[10px] font-black uppercase tracking-widest rounded-xl transition-colors cursor-pointer ${
+                      isEditing ? 'bg-amber-100 text-amber-800 hover:bg-amber-200' : 'bg-zinc-100 text-zinc-700 hover:bg-zinc-200'
                     }`}
                   >
-                    <Edit3 size={16} /> {isEditing ? 'Preview' : 'Edit'}
+                    <Edit3 size={12} /> {isEditing ? 'Preview' : 'Edit'}
                   </button>
                   <button 
                     onClick={handleSave}
                     disabled={isSaving || saveSuccess}
-                    className={`flex items-center gap-2 px-4 py-2 text-sm rounded-lg font-medium text-white transition-colors ${
-                      saveSuccess ? 'bg-green-600' : 'bg-wine hover:bg-wine/90'
+                    className={`flex items-center gap-1.5 px-4 py-2.5 text-[10px] font-black uppercase tracking-widest rounded-xl text-white transition-colors cursor-pointer ${
+                      saveSuccess ? 'bg-emerald-600' : 'bg-wine hover:bg-black'
                     } disabled:opacity-50`}
                   >
                     {isSaving ? (
-                      <><Loader2 size={16} className="animate-spin" /> Saving...</>
+                      <><Loader2 size={12} className="animate-spin" /> Saving...</>
                     ) : saveSuccess ? (
-                      <><Check size={16} /> Saved to Database</>
+                      <><Check size={12} /> Saved!</>
                     ) : (
-                      <><Save size={16} /> Save & Publish</>
+                      <><Save size={12} /> Save & Publish</>
                     )}
                   </button>
                 </div>
@@ -445,22 +453,22 @@ const BlogGeneration = () => {
                 {isEditing ? (
                   <div className="space-y-4">
                     <div>
-                      <label className="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">Cover Image URL (Base64 or Link)</label>
+                      <label className="block text-[9px] font-black text-zinc-400 uppercase tracking-widest mb-1.5">Cover Image URL (Base64 or Link)</label>
                       <div className="flex gap-2">
                         <input 
                           type="text" 
                           value={generatedBlog.imageUrl || ''} 
                           onChange={(e) => setGeneratedBlog((prev: any) => ({...prev, imageUrl: e.target.value}))}
-                          className="flex-1 px-3 py-2 border border-gray-300 rounded-lg text-sm bg-gray-50 font-mono"
+                          className="flex-1 px-4 py-2.5 border border-border rounded-xl text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-wine/10 focus:border-wine bg-zinc-50/50 font-mono"
                           placeholder="Paste image URL or Base64 string here..."
                         />
                         <div className="relative overflow-hidden shrink-0">
                           <button
                             type="button"
-                            className="h-full px-4 bg-gray-100 hover:bg-gray-200 border border-gray-300 rounded-lg text-sm font-medium whitespace-nowrap cursor-pointer flex items-center gap-2"
+                            className="h-full px-4 bg-zinc-100 hover:bg-zinc-200 border border-border rounded-xl text-xs font-bold whitespace-nowrap cursor-pointer flex items-center gap-2"
                             disabled={isUploadingImage}
                           >
-                            {isUploadingImage ? <Loader2 size={16} className="animate-spin" /> : <Upload size={16} />}
+                            {isUploadingImage ? <Loader2 size={12} className="animate-spin" /> : <Upload size={12} />}
                             Upload
                           </button>
                           <input 
@@ -474,30 +482,31 @@ const BlogGeneration = () => {
                       </div>
                     </div>
                     <div>
-                      <label className="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">Article HTML / Markdown Content</label>
+                      <label className="block text-[9px] font-black text-zinc-400 uppercase tracking-widest mb-1.5">Article HTML / Markdown Content</label>
                       <textarea 
                         value={generatedBlog.markdown || generatedBlog.article || ''} 
                         onChange={(e) => setGeneratedBlog({...generatedBlog, article: e.target.value, markdown: e.target.value})}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm bg-gray-50 font-mono min-h-[500px]"
+                        className="w-full px-4 py-3.5 border border-border rounded-xl text-xs font-medium focus:outline-none focus:ring-2 focus:ring-wine/10 focus:border-wine bg-zinc-50/50 font-mono min-h-[400px]"
                       />
                     </div>
                   </div>
                 ) : (
                   <>
                     {generatedBlog.imageUrl && (
-                      <div className="mb-6 rounded-xl overflow-hidden border border-gray-200">
+                      <div className="mb-6 rounded-2xl overflow-hidden border border-border/80">
                         <img src={generatedBlog.imageUrl} alt="Generated Cover" className="w-full h-auto max-h-[300px] object-cover" />
                       </div>
                     )}
-                    <div dangerouslySetInnerHTML={{ __html: generatedBlog.article.replace(/\n/g, '<br/>') }} />
+                    <div className="text-zinc-800 text-sm leading-relaxed" dangerouslySetInnerHTML={{ __html: generatedBlog.article.replace(/\n/g, '<br/>') }} />
                   </>
                 )}
               </div>
             </div>
           ) : (
-            <div className="h-full min-h-[400px] bg-gray-50 rounded-xl border border-dashed border-gray-300 flex flex-col items-center justify-center text-gray-400">
-              <FileText size={48} className="mb-4 text-gray-300" />
-              <p>Configure settings and click generate to create an article.</p>
+            <div className="h-full min-h-[400px] bg-white/50 backdrop-blur-md rounded-2xl border border-dashed border-border flex flex-col items-center justify-center text-zinc-400">
+              <FileText size={48} className="mb-4 text-wine/40" />
+              <p className="text-xs font-bold uppercase tracking-wider">Editor Panel Ready</p>
+              <p className="text-[11px] mt-1 text-zinc-500 text-center max-w-xs">Configure settings and click generate to generate a new blog article.</p>
             </div>
           )}
         </div>
@@ -510,46 +519,46 @@ const BlogGeneration = () => {
       {activeTab === 'published' && (
         <div>
           {isLoadingBlogs ? (
-            <div className="flex items-center justify-center py-12">
-              <Loader2 className="animate-spin text-wine" size={32} />
+            <div className="flex items-center justify-center py-16">
+              <Loader2 className="animate-spin text-wine" size={28} />
             </div>
           ) : publishedBlogs.length > 0 ? (
-            <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+            <div className="bg-white/70 backdrop-blur-md rounded-2xl border border-border overflow-hidden shadow-card">
               <table className="w-full text-left border-collapse">
                 <thead>
-                  <tr className="bg-gray-50 border-b border-gray-200 text-xs uppercase tracking-widest text-gray-500">
-                    <th className="p-4 font-bold">Title</th>
-                    <th className="p-4 font-bold">Category / Topic</th>
-                    <th className="p-4 font-bold">Date</th>
-                    <th className="p-4 font-bold text-right">Actions</th>
+                  <tr className="bg-zinc-50/50 border-b border-border/80 text-[10px] font-black text-zinc-400 uppercase tracking-widest">
+                    <th className="p-4">Title</th>
+                    <th className="p-4">Category / Topic</th>
+                    <th className="p-4">Date</th>
+                    <th className="p-4 text-right">Actions</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-gray-100">
+                <tbody className="divide-y divide-border/40">
                   {publishedBlogs.map((blog) => (
-                    <tr key={blog._id} className="hover:bg-gray-50 transition-colors">
-                      <td className="p-4 text-sm font-bold text-gray-900">
+                    <tr key={blog._id} className="hover:bg-white/80 transition-colors">
+                      <td className="p-4 text-xs font-bold text-gray-900">
                         {blog.seoTitle || blog.topic || blog.title}
                       </td>
-                      <td className="p-4 text-sm text-gray-600">
-                        <span className="bg-gray-100 px-2 py-1 rounded-md text-xs font-mono">{blog.industry || blog.category || 'General'}</span>
+                      <td className="p-4 text-xs text-gray-600">
+                        <span className="bg-wine-light border border-wine/10 text-wine px-2.5 py-0.5 rounded-lg text-[9px] font-black uppercase tracking-wider">{blog.industry || blog.category || 'General'}</span>
                       </td>
-                      <td className="p-4 text-sm text-gray-500 font-mono text-xs">
+                      <td className="p-4 text-xs text-zinc-500 font-mono">
                         {new Date(blog.createdAt).toLocaleDateString()}
                       </td>
                       <td className="p-4 flex justify-end gap-2">
                         <button 
                           onClick={() => { handleEditPublished(blog); setActiveTab('blog'); }}
-                          className="p-2 text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer"
+                          className="p-2 text-wine hover:bg-wine-light rounded-lg transition-colors cursor-pointer"
                           title="Edit Blog"
                         >
-                          <Edit3 size={16} />
+                          <Edit3 size={15} />
                         </button>
                         <button 
                           onClick={() => handleDeletePublished(blog._id)}
-                          className="p-2 text-red-600 hover:bg-red-50 rounded-lg transition-colors cursor-pointer"
+                          className="p-2 text-zinc-400 hover:text-red-500 hover:bg-red-50 rounded-lg transition-colors cursor-pointer"
                           title="Delete Blog"
                         >
-                          <Trash2 size={16} />
+                          <Trash2 size={15} />
                         </button>
                       </td>
                     </tr>
@@ -558,14 +567,16 @@ const BlogGeneration = () => {
               </table>
             </div>
           ) : (
-            <div className="bg-white rounded-xl border border-dashed border-gray-300 p-12 text-center text-gray-500">
-              No blogs published yet. Generate one above!
+            <div className="bg-white/50 backdrop-blur-md rounded-2xl border border-dashed border-border p-16 text-center text-zinc-500">
+              <FileText size={32} className="mx-auto mb-3 text-wine/40" />
+              <p className="text-xs font-bold uppercase tracking-wider text-zinc-400">No published blogs found</p>
+              <p className="text-[11px] mt-1">Generate a blog and save it to publish.</p>
             </div>
           )}
         </div>
       )}
     </div>
   );
-};
+}
 
 export default BlogGeneration;

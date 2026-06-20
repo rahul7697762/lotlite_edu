@@ -656,7 +656,7 @@ export default function AcademicHub() {
             <span className="text-wine text-xs font-bold uppercase tracking-[0.4em] block mb-3">
               {currentMetadata.tag}
             </span>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl text-black font-serif leading-none">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl text-black font-serif font-light leading-none">
               {currentMetadata.title}
             </h2>
             <p className="text-muted dark:text-neutral-400 text-sm mt-4 max-w-3xl font-medium leading-relaxed">
@@ -922,21 +922,14 @@ export default function AcademicHub() {
                             Get in touch with executive coordinators at our prime academic compound. We coordinate site tours on active request.
                           </p>
 
-                          <div className="grid md:grid-cols-2 gap-6 pt-2">
+                          <div className="pt-2 max-w-2xl">
                             <div className="bg-card border border-border p-6 rounded-2xl space-y-4">
                               <h4 className="font-extrabold text-black text-xs uppercase tracking-wider border-b border-border pb-2">Academic Coordination Desk</h4>
                               <div className="space-y-3 text-xs text-muted font-semibold">
                                 <div className="flex items-center gap-3"><Mail size={14} className="text-wine" /> <span>bba@lotlite-education.in</span></div>
                                 <div className="flex items-center gap-3"><Phone size={14} className="text-wine" /> <span>+91 80 4912 3500</span></div>
-                                <div className="flex items-center gap-3"><Building2 size={14} className="text-wine" /> <span>Dean of Students Office, Wing-A</span></div>
+                                <div className="flex items-start gap-3"><Building2 size={14} className="text-wine mt-0.5" /> <span className="leading-relaxed">Unit No 1, VTP Aethereus Commercial, Commercial 1, Mahalunge, Pune, Maharashtra 411045</span></div>
                               </div>
-                            </div>
-
-                            <div className="bg-card border border-border p-6 rounded-2xl space-y-4">
-                              <h4 className="font-extrabold text-black text-xs uppercase tracking-wider border-b border-border pb-2">Bengaluru Campus Location</h4>
-                              <p className="text-[11px] text-muted leading-relaxed font-semibold">
-                                Lotlite Tech Park Compound, Academic Buildings Wing 2, Outer Ring Road, Landmark Tech Park Sector, Bengaluru, Karnataka - 560103.
-                              </p>
                             </div>
                           </div>
                         </div>
@@ -1283,21 +1276,14 @@ export default function AcademicHub() {
                             Get in touch with executive coordinators at our prime academic compound. We coordinate site tours on active request.
                           </p>
 
-                          <div className="grid md:grid-cols-2 gap-6 pt-2">
+                          <div className="pt-2 max-w-2xl">
                             <div className="bg-card border border-border p-6 rounded-2xl space-y-4">
                               <h4 className="font-extrabold text-black text-xs uppercase tracking-wider border-b border-border pb-2">BCA Academic Coordination Desk</h4>
                               <div className="space-y-3 text-xs text-muted font-semibold">
                                 <div className="flex items-center gap-3"><Mail size={14} className="text-wine" /> <span>bca@lotlite-education.in</span></div>
                                 <div className="flex items-center gap-3"><Phone size={14} className="text-wine" /> <span>+91 80 4912 3600</span></div>
-                                <div className="flex items-center gap-3"><Building2 size={14} className="text-wine" /> <span>Dean of Computer Sciences Office, Wing-B</span></div>
+                                <div className="flex items-start gap-3"><Building2 size={14} className="text-wine mt-0.5" /> <span className="leading-relaxed">Unit No 1, VTP Aethereus Commercial, Commercial 1, Mahalunge, Pune, Maharashtra 411045</span></div>
                               </div>
-                            </div>
-
-                            <div className="bg-card border border-border p-6 rounded-2xl space-y-4">
-                              <h4 className="font-extrabold text-black text-xs uppercase tracking-wider border-b border-border pb-2">Bengaluru Campus Location</h4>
-                              <p className="text-[11px] text-muted leading-relaxed font-semibold">
-                                Lotlite Tech Park Compound, Academic Buildings Wing 2, Outer Ring Road, Landmark Tech Park Sector, Bengaluru, Karnataka - 560103.
-                              </p>
                             </div>
                           </div>
                         </div>
@@ -1314,7 +1300,7 @@ export default function AcademicHub() {
                                 <span className="inline-block bg-wine px-3 py-1 rounded-full text-[8.5px] font-black uppercase tracking-widest text-[#ffffff] border border-white/10 shadow-xs w-fit">GRADUATE EXCELLENCE CREDENTIAL</span>
                                 <h4 className="text-2xl sm:text-3xl font-serif text-black tracking-tight leading-tight">Professional Certificate in Computer Applications & Software Development</h4>
                                 <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed font-semibold">
-                                  Earn an industry-renowned, physical and secure digital certificate of completion backed directly by Lotlite Education. Perfect for LinkedIn portfolios, career accelerations, and global recruitment validations.
+                                  Earn an industry-renowned, physical and secure digital certificate of completion backed directly by Lotlite Startup. Perfect for LinkedIn portfolios, career accelerations, and global recruitment validations.
                                 </p>
                                 <div className="flex flex-wrap gap-4 pt-2 text-[10px] font-bold text-wine">
                                   <span className="flex items-center gap-1"><Award size={12} /> Industry Standardized Alignment</span>
@@ -1667,21 +1653,14 @@ export default function AcademicHub() {
                             Speak with advisors at our premium office compounds.
                           </p>
 
-                          <div className="grid md:grid-cols-2 gap-6 pt-2">
+                          <div className="pt-2 max-w-2xl">
                             <div className="bg-card border border-border p-6 rounded-2xl space-y-4">
                               <h4 className="font-extrabold text-black text-xs uppercase tracking-wider border-b border-border pb-2">MBA Executive Admissions Hub</h4>
                               <div className="space-y-3 text-xs text-muted font-semibold">
                                 <div className="flex items-center gap-3"><Mail size={14} className="text-wine" /> <span>mba@lotlite-education.in</span></div>
                                 <div className="flex items-center gap-3"><Phone size={14} className="text-wine" /> <span>+91 80 4912 3705</span></div>
-                                <div className="flex items-center gap-3"><Building2 size={14} className="text-wine" /> <span>Executive Admissions Director office, Floor 2</span></div>
+                                <div className="flex items-start gap-3"><Building2 size={14} className="text-wine mt-0.5" /> <span className="leading-relaxed">Unit No 1, VTP Aethereus Commercial, Commercial 1, Mahalunge, Pune, Maharashtra 411045</span></div>
                               </div>
-                            </div>
-
-                            <div className="bg-card border border-border p-6 rounded-2xl space-y-4">
-                              <h4 className="font-extrabold text-black text-xs uppercase tracking-wider border-b border-border pb-2">Physical Location</h4>
-                              <p className="text-[11px] text-muted leading-relaxed font-semibold">
-                                Lotlite Corporate Compound, Tower-A, Floby Administrative Area, Outer Ring Road, Bengaluru - 560103.
-                              </p>
                             </div>
                           </div>
                         </div>
@@ -2072,21 +2051,14 @@ export default function AcademicHub() {
                             Speak with advisors at our technology programme offices.
                           </p>
 
-                          <div className="grid md:grid-cols-2 gap-6 pt-2">
+                          <div className="pt-2 max-w-2xl">
                             <div className="bg-card border border-border p-6 rounded-2xl space-y-4">
                               <h4 className="font-extrabold text-black text-xs uppercase tracking-wider border-b border-border pb-2">MCA Admissions Hub</h4>
                               <div className="space-y-3 text-xs text-muted font-semibold">
                                 <div className="flex items-center gap-3"><Mail size={14} className="text-wine" /> <span>mca@lotlite-education.in</span></div>
                                 <div className="flex items-center gap-3"><Phone size={14} className="text-wine" /> <span>+91 80 4912 3800</span></div>
-                                <div className="flex items-center gap-3"><Building2 size={14} className="text-wine" /> <span>Technology Admissions Director, Floor 3</span></div>
+                                <div className="flex items-start gap-3"><Building2 size={14} className="text-wine mt-0.5" /> <span className="leading-relaxed">Unit No 1, VTP Aethereus Commercial, Commercial 1, Mahalunge, Pune, Maharashtra 411045</span></div>
                               </div>
-                            </div>
-
-                            <div className="bg-card border border-border p-6 rounded-2xl space-y-4">
-                              <h4 className="font-extrabold text-black text-xs uppercase tracking-wider border-b border-border pb-2">Physical Location</h4>
-                              <p className="text-[11px] text-muted leading-relaxed font-semibold">
-                                Lotlite Corporate Compound, Tower-A, Floby Administrative Area, Outer Ring Road, Bengaluru - 560103.
-                              </p>
                             </div>
                           </div>
                         </div>
@@ -2103,7 +2075,7 @@ export default function AcademicHub() {
                                 <span className="inline-block bg-wine px-3 py-1 rounded-full text-[8.5px] font-black uppercase tracking-widest text-[#ffffff] border border-white/10 shadow-xs w-fit">EXECUTIVE CREDENTIAL EXCELLENCE</span>
                                 <h4 className="text-2xl sm:text-3xl font-serif text-black tracking-tight leading-tight">Postgraduate Certificate in AI, Software Engineering & Applied Computing</h4>
                                 <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed font-semibold">
-                                  Earn an executive-grade, physically-sealed and secure digital certificate of mastery backed directly by Lotlite Education. Perfect for corporate portfolio validations, career promotions, and technology leadership positions.
+                                  Earn an executive-grade, physically-sealed and secure digital certificate of mastery backed directly by Lotlite Startup. Perfect for corporate portfolio validations, career promotions, and technology leadership positions.
                                 </p>
                                 <div className="flex flex-wrap gap-4 pt-2 text-[10px] font-bold text-wine">
                                   <span className="flex items-center gap-1"><Award size={12} /> Industry Standardized Alignment</span>
@@ -2219,7 +2191,7 @@ export default function AcademicHub() {
                         <span className="inline-block mb-3 text-wine text-[10px] font-semibold uppercase tracking-widest bg-wine-light px-3 py-1 rounded-full border border-wine-light-border">OUR ADULT LEGACY</span>
                         <h3 className="text-3xl md:text-4xl text-black font-serif tracking-tight">Why Lotlite?</h3>
                         <p className="text-muted text-sm leading-relaxed font-semibold mt-2">
-                          Lotlite Education represents India's leading center dedicated completely to Real Estate Study and development. We operate strictly in accordance under global Royal Institution of Chartered Surveyors templates.
+                          Lotlite Startup represents India's leading center dedicated completely to Real Estate Study and development. We operate strictly in accordance under global Royal Institution of Chartered Surveyors templates.
                         </p>
                       </div>
                       <div className="grid md:grid-cols-3 gap-6 pt-2">
@@ -2327,7 +2299,7 @@ export default function AcademicHub() {
                               <p className="text-[10px] text-muted dark:text-neutral-300 italic font-semibold leading-relaxed pt-1">"{prof.bio || prof.overview}"</p>
                               <div className="pt-2 border-t border-border/80 mt-2 flex items-center">
                                 <a
-                                  href={prof.linkedinUrl || `https://www.linkedin.com/search/results/all/?keywords=${encodeURIComponent(prof.name + " Lotlite Education")}`}
+                                  href={prof.linkedinUrl || `https://www.linkedin.com/search/results/all/?keywords=${encodeURIComponent(prof.name + " Lotlite Startup")}`}
                                   target="_blank"
                                   rel="noopener noreferrer"
                                   className="inline-flex items-center gap-1.5 text-[9px] text-neutral-500 hover:text-blue-600 font-extrabold uppercase tracking-widest transition-colors cursor-pointer"
@@ -2353,14 +2325,23 @@ export default function AcademicHub() {
                       </div>
 
                       <div className="space-y-4 pt-2">
-                        {[
-                          { title: "Metropolitan Real Estate Pricing Anomalies", author: "Dr. Sundar Venkatesh", journal: "Global Journal of Spatial Finance", year: "2026", desc: "Constructing algorithmic models to isolate land tax distortions inside emerging smart cities." },
-                          { title: "SaaS Multi-Listing Protocols in Indian MMR", autor: "Siddarth Menon", journal: "Proptech Sprints Review", year: "2025", desc: "A detailed breakdown of brokerage CAC reductions using serverless automation networks." }
-                        ].map((paper, idx) => (
+                        {(websiteData?.papers?.length > 0 ? websiteData.papers : [
+                          { title: "Metropolitan Real Estate Pricing Anomalies", author: "Dr. Sundar Venkatesh", journal: "Global Journal of Spatial Finance", year: "2026", desc: "Constructing algorithmic models to isolate land tax distortions inside emerging smart cities.", link: "" },
+                          { title: "SaaS Multi-Listing Protocols in Indian MMR", author: "Siddarth Menon", journal: "Proptech Sprints Review", year: "2025", desc: "A detailed breakdown of brokerage CAC reductions using serverless automation networks.", link: "" }
+                        ]).map((paper: any, idx: number) => (
                           <div key={idx} className="bg-card border border-border p-5 rounded-2xl shadow-2xs">
                             <span className="text-[9px] text-wine uppercase tracking-widest font-black block">{paper.journal} (Year {paper.year})</span>
-                            <h4 className="font-serif text-black text-base font-bold mt-1 leading-tight">{paper.title}</h4>
-                            <p className="text-[10px] text-muted font-extrabold uppercase tracking-widest mt-1">Lead Researcher: {paper.author}</p>
+                            
+                            {paper.link ? (
+                              <a href={paper.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 font-serif text-black hover:text-wine transition-colors mt-1">
+                                <h4 className="text-base font-bold leading-tight">{paper.title}</h4>
+                                <ExternalLink size={14} className="opacity-70" />
+                              </a>
+                            ) : (
+                              <h4 className="font-serif text-black text-base font-bold mt-1 leading-tight">{paper.title}</h4>
+                            )}
+                            
+                            <p className="text-[10px] text-muted font-extrabold uppercase tracking-widest mt-1">Lead Researcher: {paper.author || paper.autor}</p>
                             <p className="text-xs text-muted leading-relaxed font-semibold mt-2">{paper.desc}</p>
                           </div>
                         ))}
@@ -2791,7 +2772,10 @@ export default function AcademicHub() {
                       {paginatedBlogs.map((post, idx) => (
                         <div
                           key={idx}
-                          onClick={() => setSelectedBlog(post)}
+                          onClick={() => {
+                            setSelectedBlog(post);
+                            navigate(`/blog/${post.id}`);
+                          }}
                           className="bg-card border border-border rounded-2xl overflow-hidden hover:border-wine/25 cursor-pointer shadow-xs hover:shadow-md transition-all duration-300 group flex flex-col justify-between"
                         >
                           <div>
@@ -2894,7 +2878,7 @@ export default function AcademicHub() {
                       <span className="inline-block text-wine text-xs font-bold uppercase tracking-[0.4em] mb-1 bg-wine-light px-4 py-1.5 rounded-full border border-wine-light-border animate-fade-in">
                         ADMISSIONS
                       </span>
-                      <h2 className="text-4xl md:text-5xl lg:text-6xl text-black font-serif leading-none tracking-tight animate-fade-in">
+                      <h2 className="text-4xl md:text-5xl lg:text-6xl text-black font-serif font-light leading-none tracking-tight animate-fade-in">
                         Start your admission journey.
                       </h2>
                       <p className="text-muted dark:text-neutral-400 text-sm md:text-base mt-2 max-w-3xl font-medium leading-relaxed animate-fade-in">

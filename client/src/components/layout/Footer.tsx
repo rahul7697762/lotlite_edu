@@ -55,7 +55,7 @@ export default function Footer() {
             <div className="space-y-4 text-sm text-black/60 dark:text-zinc-300 font-medium">
               <div>
                 <p className="text-[9px] uppercase tracking-widest text-[#a3a3a3] mb-1 font-semibold">Campus Address</p>
-                <p className="text-xs text-muted dark:text-zinc-400 leading-relaxed font-semibold">Lotlite Technology Pvt Ltd</p>
+                <p className="text-xs text-muted dark:text-zinc-400 leading-relaxed font-semibold">Unit No 1, VTP Aethereus Commercial, Commercial 1, Mahalunge, Pune, Maharashtra 411045</p>
               </div>
               <p>Email: <a href="mailto:admissions@lotlite.co" className="text-wine transition-opacity hover:opacity-80">admissions@lotlite.co</a></p>
             </div>
@@ -114,7 +114,7 @@ export default function Footer() {
             {/* Styled Mini Maps Navigation Section */}
             <div className="rounded-2xl overflow-hidden border border-black/5 dark:border-white/10 shadow-xs relative group bg-neutral-50 dark:bg-zinc-900/40 p-1 mt-4">
               <iframe
-                src="https://maps.google.com/maps?q=Lotlite%20Technology%20Pvt%20Ltd&t=&z=14&ie=UTF8&iwloc=&output=embed"
+                src="https://maps.google.com/maps?q=VTP%20Aethereus%20Commercial,%20Mahalunge,%20Pune&t=&z=14&ie=UTF8&iwloc=&output=embed"
                 className="w-full h-24 rounded-xl border-0 grayscale dark:invert-[90%] dark:hue-rotate-180 contrast-125 opacity-75 hover:opacity-100 hover:grayscale-0 dark:hover:invert-0 dark:hover:hue-rotate-0 transition-all duration-300"
                 allowFullScreen
                 loading="lazy"
@@ -133,7 +133,7 @@ export default function Footer() {
         </div>
 
         <div className="pt-10 md:pt-12 border-t border-black/5 dark:border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 md:gap-6" data-aos="fade-up">
-          <p className="text-black/30 dark:text-zinc-500 text-[8px] md:text-[10px] uppercase font-bold tracking-[0.2em] md:tracking-[0.3em] text-center">© 2025 Lotlite Education. All rights reserved.</p>
+          <p className="text-black/30 dark:text-zinc-500 text-[8px] md:text-[10px] uppercase font-bold tracking-[0.2em] md:tracking-[0.3em] text-center">© 2026 Lotlite Startup. All rights reserved.</p>
           <div className="flex flex-wrap gap-4 md:gap-8 items-center text-black/30 dark:text-zinc-500 text-[8px] md:text-[10px] uppercase font-bold tracking-[0.2em] md:tracking-[0.3em]">
             <Link to="/terms-of-use" className="hover:text-wine transition-colors">Terms of Use</Link>
             <Link to="/privacy-policy" className="hover:text-wine transition-colors">Privacy Policy</Link>

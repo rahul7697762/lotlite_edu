@@ -126,7 +126,7 @@ export default function Admissions() {
           <div data-aos="fade-right" className="space-y-4">
             <span className="text-wine text-[10px] font-bold uppercase tracking-[0.4em] block mb-2">Admissions Open</span>
 
-            <h2 className="text-4xl md:text-5xl text-black font-serif leading-[1.15] text-balance">
+            <h2 className="text-4xl md:text-5xl text-black font-serif font-light leading-[1.15] text-balance">
               Real Estate and PropTech <br className="hidden md:block" />
               <span className="text-wine">Business Education for the Next Generation</span>
             </h2>

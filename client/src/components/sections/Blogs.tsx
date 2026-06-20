@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowUpRight, Plus, X, Loader2, Sparkles, BookOpen } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import { useApp } from '../../AppContext';
 
 export default function Blogs() {
+  const navigate = useNavigate();
   const {
     blogs: blogPosts,
     blogsLoading: isLoading,
@@ -100,6 +102,7 @@ export default function Blogs() {
             {blogPosts.map((post, idx) => (
               <motion.div
                 key={post.id}
+                onClick={() => navigate(`/blog/${post.id}`)}
                 whileHover={{ y: -5 }}
                 className="group cursor-pointer bg-[#ffffff] p-5 rounded-2xl border border-border shadow-sm flex flex-col justify-between"
                 data-aos="fade-up"

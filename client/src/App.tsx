@@ -15,6 +15,7 @@ import DownloadBrochureModal from './components/auth/DownloadBrochureModal';
 import DesktopSideMenu from './components/layout/DesktopSideMenu';
 import TermsOfUse from './components/sections/TermsOfUse';
 import PrivacyPolicy from './components/sections/PrivacyPolicy';
+import SEOInjector from './components/SEOInjector';
 import { useApp } from './AppContext';
 
 // Extend Window interface for AOS
@@ -117,6 +118,7 @@ function AppContent() {
 
   return (
     <div className="relative min-h-screen bg-white antialiased selection:bg-wine/10 selection:text-black overflow-x-hidden">
+      <SEOInjector />
       {/* Background Ambience */}
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden" id="app-background-glows">
         <motion.div

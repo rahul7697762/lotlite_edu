@@ -50,107 +50,115 @@ export default function OverviewDashboard() {
       label: 'Total Leads Captured',
       value: totalLeads.toString(),
       icon: Users,
-      color: 'text-blue-600',
-      bg: 'bg-blue-100'
+      color: 'text-wine',
+      bg: 'bg-wine-light'
     },
     {
       label: 'Callyzer Success Rate',
       value: `${successRate}%`,
       icon: TrendingUp,
-      color: 'text-green-600',
-      bg: 'bg-green-100'
+      color: 'text-emerald-600',
+      bg: 'bg-emerald-50'
     },
     {
       label: 'Top Lead Source',
       value: topSource,
       icon: MousePointerClick,
-      color: 'text-purple-600',
-      bg: 'bg-purple-100'
+      color: 'text-wine',
+      bg: 'bg-wine-light'
     },
     {
       label: 'Failed API Syncs',
       value: failedLeads.toString(),
       icon: AlertCircle,
       color: 'text-red-600',
-      bg: 'bg-red-100'
+      bg: 'bg-red-50'
     },
   ];
 
   if (loading) {
     return (
-      <div className="min-h-screen p-8 max-w-7xl mx-auto flex justify-center items-center">
+      <div className="min-h-screen p-8 max-w-7xl mx-auto flex justify-center items-center bg-transparent">
         <div className="animate-spin h-8 w-8 border-4 border-wine border-t-transparent rounded-full"></div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen p-8 max-w-7xl mx-auto">
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900 tracking-tight">
+    <div className="min-h-screen p-6 md:p-8 max-w-7xl mx-auto bg-transparent relative z-10">
+      <div className="mb-10 pb-6 border-b border-border/60">
+        <div className="flex items-center gap-2 text-wine font-black text-[9px] uppercase tracking-widest">
+          <span>Operational Dashboard Cockpit</span>
+        </div>
+        <h1 className="text-3xl font-serif font-black tracking-tight text-black mt-2">
           System Overview
         </h1>
-        <p className="text-muted mt-2">Real-time metrics based on your actual database leads.</p>
+        <p className="text-xs text-zinc-500 mt-1 uppercase font-mono tracking-widest font-semibold">
+          Real-time metrics based on database leads.
+        </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
         {stats.map((stat) => (
-          <div key={stat.label} className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+          <div key={stat.label} className="bg-white/70 backdrop-blur-md rounded-2xl border border-border shadow-card p-6 flex flex-col justify-between min-h-[130px] transition-all hover:bg-white">
             <div className="flex items-center justify-between mb-4">
-              <div className={`${stat.bg} p-3 rounded-lg`}>
-                <stat.icon className={`w-6 h-6 ${stat.color}`} />
+              <span className="text-[9px] font-black uppercase tracking-widest text-zinc-400">{stat.label}</span>
+              <div className={`${stat.bg} w-9 h-9 rounded-xl flex items-center justify-center`}>
+                <stat.icon className={`w-5 h-5 ${stat.color}`} />
               </div>
             </div>
-            <h3 className="text-3xl font-bold text-gray-900 mb-1 truncate" title={stat.value}>{stat.value}</h3>
-            <p className="text-gray-500 font-medium text-sm">{stat.label}</p>
+            <div>
+              <h3 className="text-3xl font-serif font-bold text-black truncate" title={stat.value}>{stat.value}</h3>
+              <p className="text-zinc-500 font-bold text-[9px] uppercase tracking-wider mt-1.5">Aggregate Metric</p>
+            </div>
           </div>
         ))}
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* Source Breakdown Table */}
-        <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-          <h3 className="text-lg font-bold text-gray-900 mb-6 flex items-center gap-2">
-            <MousePointerClick className="w-5 h-5 text-gray-400"/> Leads by Source
+        <div className="bg-white/70 backdrop-blur-md rounded-2xl border border-border shadow-card p-6">
+          <h3 className="text-xs font-black uppercase tracking-wider text-black mb-6 flex items-center gap-2">
+            <MousePointerClick className="w-4 h-4 text-wine"/> Leads by Source
           </h3>
           <div className="space-y-4">
-            <div className="flex justify-between text-xs font-semibold text-gray-400 uppercase tracking-wider pb-2 border-b border-gray-100">
+            <div className="flex justify-between text-[10px] font-black text-zinc-400 uppercase tracking-widest pb-3 border-b border-border/80">
               <span>Source Name</span>
               <span className="text-right">Total Leads</span>
             </div>
             {sortedSources.length === 0 && (
-              <p className="text-sm text-gray-500 text-center py-4">No data available.</p>
+              <p className="text-xs text-zinc-400 text-center py-6 font-semibold">No source data available.</p>
             )}
             {sortedSources.map(([sourceName, count], i) => (
-              <div key={i} className="flex justify-between items-center text-sm">
-                <span className="text-gray-600 font-medium truncate pr-4">{sourceName}</span>
-                <span className="text-gray-900 font-semibold bg-gray-100 px-2 py-1 rounded-md">{count}</span>
+              <div key={i} className="flex justify-between items-center py-2.5 border-b border-border/40 text-xs font-semibold">
+                <span className="text-zinc-700 truncate pr-4">{sourceName}</span>
+                <span className="text-wine font-bold bg-wine-light border border-wine/10 px-2 py-0.5 rounded-lg font-mono">{count}</span>
               </div>
             ))}
           </div>
         </div>
 
         {/* Sync Status Table */}
-        <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-          <h3 className="text-lg font-bold text-gray-900 mb-6 flex items-center gap-2">
-            <CheckCircle className="w-5 h-5 text-gray-400"/> API Sync Status
+        <div className="bg-white/70 backdrop-blur-md rounded-2xl border border-border shadow-card p-6">
+          <h3 className="text-xs font-black uppercase tracking-wider text-black mb-6 flex items-center gap-2">
+            <CheckCircle className="w-4 h-4 text-wine"/> API Sync Status
           </h3>
           <div className="space-y-4">
-            <div className="flex justify-between text-xs font-semibold text-gray-400 uppercase tracking-wider pb-2 border-b border-gray-100">
+            <div className="flex justify-between text-[10px] font-black text-zinc-400 uppercase tracking-widest pb-3 border-b border-border/80">
               <span>Status</span>
               <span className="text-right">Count</span>
             </div>
-            <div className="flex justify-between items-center text-sm">
-              <span className="text-emerald-600 font-medium flex items-center gap-1.5"><CheckCircle className="w-4 h-4"/> Sent to Callyzer</span>
-              <span className="text-gray-900 font-semibold bg-gray-100 px-2 py-1 rounded-md">{sentLeads}</span>
+            <div className="flex justify-between items-center py-2.5 border-b border-border/40 text-xs font-semibold">
+              <span className="text-emerald-600 flex items-center gap-1.5"><CheckCircle className="w-4 h-4"/> Sent to Callyzer</span>
+              <span className="text-zinc-700 font-bold bg-zinc-50 border border-border px-2 py-0.5 rounded-lg font-mono">{sentLeads}</span>
             </div>
-            <div className="flex justify-between items-center text-sm">
-              <span className="text-red-600 font-medium flex items-center gap-1.5"><AlertCircle className="w-4 h-4"/> Failed to Sync</span>
-              <span className="text-gray-900 font-semibold bg-gray-100 px-2 py-1 rounded-md">{failedLeads}</span>
+            <div className="flex justify-between items-center py-2.5 border-b border-border/40 text-xs font-semibold">
+              <span className="text-red-600 flex items-center gap-1.5"><AlertCircle className="w-4 h-4"/> Failed to Sync</span>
+              <span className="text-zinc-700 font-bold bg-zinc-50 border border-border px-2 py-0.5 rounded-lg font-mono">{failedLeads}</span>
             </div>
-            <div className="flex justify-between items-center text-sm">
-              <span className="text-amber-600 font-medium flex items-center gap-1.5"><Users className="w-4 h-4"/> Pending / Unknown</span>
-              <span className="text-gray-900 font-semibold bg-gray-100 px-2 py-1 rounded-md">{totalLeads - sentLeads - failedLeads}</span>
+            <div className="flex justify-between items-center py-2.5 border-b border-border/40 text-xs font-semibold">
+              <span className="text-amber-600 flex items-center gap-1.5"><Users className="w-4 h-4"/> Pending / Unknown</span>
+              <span className="text-zinc-700 font-bold bg-zinc-50 border border-border px-2 py-0.5 rounded-lg font-mono">{totalLeads - sentLeads - failedLeads}</span>
             </div>
           </div>
         </div>
@@ -158,3 +166,4 @@ export default function OverviewDashboard() {
     </div>
   );
 }
+
